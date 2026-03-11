@@ -1,0 +1,26 @@
+@use '../../styles/variables' as *;
+@use '../../styles/functions' as *;
+@use '../../styles/mixins' as *;
+
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: toRem(16);
+  transform: translateY(-50%);
+  color: $color-text-tertiary;
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+
+.wrapper:focus-within .icon {
+  color: $color-primary;
+}
+
+.input {
+  padding-left: toRem(46);
+}

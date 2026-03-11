@@ -1,0 +1,104 @@
+@use '../../../../shared/ui/styles/variables' as *;
+@use '../../../../shared/ui/styles/functions' as *;
+@use '../../../../shared/ui/styles/mixins' as *;
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: toRem(16);
+  padding: toRem(20);
+  background-color: $color-background;
+  border: 1px solid $color-border;
+  border-radius: toRem(12);
+  box-shadow: 0 2px 8px $color-shadow;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+  width: 100%;
+
+  &:hover {
+    box-shadow: 0 4px 16px $color-shadow-hover;
+    transform: translateY(toRem(-2));
+    border-color: rgba(59, 130, 246, 0.4);
+  }
+
+  @include mobile {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.avatar {
+  width: toRem(80);
+  height: toRem(80);
+
+  @include mobile {
+    width: toRem(100);
+    height: toRem(100);
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.name {
+  margin: 0 0 toRem(8) 0;
+  font-size: toRem(20);
+  font-weight: 600;
+  color: $color-text-primary;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @include mobile {
+    text-align: center;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+}
+
+.username {
+  margin: 0 0 toRem(4) 0;
+  font-size: toRem(14);
+  color: $color-text-secondary;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @include mobile {
+    text-align: center;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+}
+
+.email {
+  margin: 0;
+  font-size: toRem(14);
+  color: $color-text-tertiary;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  line-height: 1.4;
+
+  @include mobile {
+    text-align: center;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+}

@@ -1,0 +1,46 @@
+@use '../../styles/variables' as *;
+@use '../../styles/functions' as *;
+@use '../../styles/mixins' as *;
+
+.input {
+  width: 100%;
+  padding: toRem(12) toRem(16);
+  font-size: toRem(16);
+  font-weight: 400;
+  color: $color-text-primary;
+  background-color: $color-background;
+  border: 1px solid $color-border;
+  border-radius: toRem(12);
+  outline: none;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px $color-shadow;
+
+  &::placeholder {
+    color: $color-text-tertiary;
+  }
+
+  &:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 2px 8px $color-shadow;
+  }
+
+  &:focus {
+    border-color: $color-primary;
+    box-shadow:
+      0 0 0 3px rgba(59, 130, 246, 0.1),
+      0 2px 8px $color-shadow;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: $color-background-disabled;
+  }
+
+  @include mobile {
+    font-size: toRem(14);
+    padding: toRem(10) toRem(14);
+  }
+}

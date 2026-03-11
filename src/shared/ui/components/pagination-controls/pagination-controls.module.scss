@@ -1,0 +1,20 @@
+@use '../../styles/variables' as *;
+@use '../../styles/functions' as *;
+@use '../../styles/mixins' as *;
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: toRem(16);
+  padding: toRem(8) 0;
+}
+
+.pageNumber {
+  min-width: toRem(32);
+  text-align: center;
+  font-size: toRem(16);
+  font-weight: 600;
+  color: $color-text-primary;
+  user-select: none;
+}

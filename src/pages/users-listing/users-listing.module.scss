@@ -1,0 +1,13 @@
+@use '../../shared/ui/styles/variables' as *;
+@use '../../shared/ui/styles/functions' as *;
+@use '../../shared/ui/styles/mixins' as *;
+
+.page {
+  min-height: 100vh;
+  background-color: $color-page-background;
+  padding: toRem(40) toRem(24);
+
+  @include mobile {
+    padding: toRem(32) toRem(16);
+  }
+}

@@ -1,0 +1,66 @@
+@use '../../../../shared/ui/styles/variables' as *;
+@use '../../../../shared/ui/styles/functions' as *;
+@use '../../../../shared/ui/styles/mixins' as *;
+
+.searchBar {
+  max-width: 45%;
+  margin: 0 auto;
+
+  @include tablet {
+    max-width: 60%;
+  }
+
+  @include mobile {
+    max-width: 100%;
+  }
+}
+
+.pagination {
+  margin-top: toRem(32);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: toRem(24);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  margin-top: toRem(24);
+  transition: opacity 0.2s ease;
+}
+
+.fetching {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.listItem {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 45%;
+
+  @include tablet {
+    max-width: 60%;
+  }
+
+  @include mobile {
+    max-width: 100%;
+  }
+}
+
+.loading,
+.error,
+.empty {
+  padding: toRem(24);
+  text-align: center;
+  font-size: toRem(16);
+  color: $color-text-secondary;
+}
+
+.error {
+  color: $color-error;
+}
