@@ -1,0 +1,39 @@
+@use '../../shared/ui/styles/variables' as *;
+@use '../../shared/ui/styles/functions' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: toRem(24);
+}
+
+.title {
+  font-size: toRem(32);
+  font-weight: 700;
+  color: $color-text-primary;
+}
+
+.link {
+  padding: toRem(12) toRem(32);
+  font-size: toRem(16);
+  font-weight: 600;
+  color: $color-text-primary;
+  background-color: $color-primary;
+  border: 1px solid $color-primary;
+  border-radius: toRem(8);
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px $color-shadow;
+
+  &:hover {
+    background-color: $color-primary-hover;
+    border-color: $color-primary-hover;
+    box-shadow: 0 4px 16px $color-shadow-hover;
+  }
+}
